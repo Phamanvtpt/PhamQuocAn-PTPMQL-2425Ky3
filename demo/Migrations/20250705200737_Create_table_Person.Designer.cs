@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 // Add the following using directive for ApplicationDbContext
 using demo.Models;
-using FirstWebMVC.Data;
+using Demo.Data;
 
 #nullable disable
 

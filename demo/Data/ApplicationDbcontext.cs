@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using FirstWebMVC.Models;
-namespace FirstWebMVC.Data
+using Demo.Models;
+namespace Demo.Data
 {
     public class ApplicationDbContext : DbContext
     {

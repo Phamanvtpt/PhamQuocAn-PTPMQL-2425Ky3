@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoMVC.FirstwebMVC.Controllers
+namespace Demo.Demo.Controllers
 {
-    public class DemoControllers : Controller
+    public class DemoController : Controller
     {
         public IActionResult SendData(string fullname)
         {

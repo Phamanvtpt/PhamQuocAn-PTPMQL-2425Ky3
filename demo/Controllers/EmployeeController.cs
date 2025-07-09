@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using FirstWebMVC.Models;
+using Demo.Models;
 using Microsoft.EntityFrameworkCore;
-using FirstWebMVC.Data;
+using Demo.Data;
 
-namespace FirstWebMVC.Controllers
+namespace Demo.Controllers
 {
     public class EmployeeController : Controller
     {

@@ -1,12 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
-using FirstWebMVC.Models;
-using FirstWebMVC.Data;
-using Microsoft.EntityFrameworkCore;
+// using Demo.Models; // Ensure this matches the actual namespace of your Person model
 
-namespace FirstWebMVC.Controllers
+// If your Person model is in a different namespace, update the using directive accordingly, for example:
+// using YourActualNamespace.Models;
+// using Demo.Data; // Ensure this matches the namespace where ApplicationDbContext is defined
+
+// Update the following using directives to match your actual namespaces:
+// using Demo.Models; // Uncomment and update this line if your Person model is in Demo.Models
+// using Demo.Models; // Replace 'Demo.Models' with the correct namespace if different
+// Update the line below to the correct namespace for your Person model, for example:
+// using Demo.Models; // Removed because 'Demo.Models' does not exist. Add the correct namespace for your Person model if needed.
+// using Demo.Data;   // Replace with the actual namespace where 'ApplicationDbContext' is defined
+// Update the line below to the correct namespace where ApplicationDbContext is defined, for example:
+using Demo.Data; // Replace 'YourActualNamespace.Data' with the real namespace
+using Microsoft.EntityFrameworkCore;
+// Add the correct namespace for ApplicationDbContext if it's different
+// For example, if ApplicationDbContext is in Demo.Models:
+// using Demo.Models; // Removed because 'Demo.Models' does not exist. Add the correct namespace for your Person model if needed.
+// using Demo.Data; // Removed because 'Demo.Data' does not exist or is not needed
+// using Demo.Data; // Removed because 'Demo.Data' does not exist or is not needed
+
+namespace Demo.Controllers
 {
     public class PersonController : Controller
     {
+        // Ensure ApplicationDbContext is defined in your project under the correct namespace
         private readonly ApplicationDbContext _context;
 
         public PersonController(ApplicationDbContext context)

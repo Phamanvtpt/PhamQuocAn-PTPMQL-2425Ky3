@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace FirstWebMVC.Models
+namespace Demo.Models
 
 {
     [Table("Person")]

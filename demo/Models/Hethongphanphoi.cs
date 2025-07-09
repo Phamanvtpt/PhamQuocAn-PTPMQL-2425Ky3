@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace FirstWebMVC.Models;
+namespace Demo.Models;
 
 public class HeThongPhanPhoi
 {

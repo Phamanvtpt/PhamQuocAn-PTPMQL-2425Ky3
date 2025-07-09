@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using FirstWebMVC.Data;
+using Demo.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
