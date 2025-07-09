@@ -1,26 +1,124 @@
 using Microsoft.AspNetCore.Mvc;
-// Ensure that the namespace matches the actual namespace of your Person class.
-// For example, if your Person class is in FirstWebMVC.Models, keep this line.
-// If not, update it to the correct namespace, such as:
 using FirstWebMVC.Models;
-using System.Text.Encodings.Web;
-namespace FirstWebMVC.Controllers;
-    public class PersonController : Controller
-{
-    // GET: /Person/
-    public IActionResult Index()
-    {
-        return View();
-    }
+using FirstWebMVC.Data;
+using Microsoft.EntityFrameworkCore;
 
-    // GET: /Person/Details/
-    public IActionResult Details()
+namespace FirstWebMVC.Controllers
+{
+    public class PersonController : Controller
     {
-        Person person = new Person
+        private readonly ApplicationDbContext _context;
+
+        public PersonController(ApplicationDbContext context)
         {
-            PersonId = "2121050503",
-            FullName = "Pham Quôc An"
-        };
-        return View(person);
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var model = await _context.Persons.ToListAsync();
+            return View(model);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(person);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(person);
+        }
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _context.Persons.FindAsync(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+            return View(person);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        {
+            if (id != person.PersonId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(person);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PersonExists(person.PersonId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(person);
+        }
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _context.Persons
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return View(person);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            if (_context.Persons == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Persons'  is null.");
+            }
+            var person = await _context.Persons.FindAsync(id);
+            if (person != null)
+            {
+                _context.Persons.Remove(person);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        private bool PersonExists(string id)
+        {
+            return (_context.Persons?.Any(e => e.PersonId == id)).GetValueOrDefault();
+        }
     }
 }
+
+

@@ -1,0 +1,32 @@
+using Demo MVC.Data;
+using Demo MVC.Model;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Demo_MVC.Controllers
+{
+    public class StudentController : Controller
+    {
+        private readonly IStudentRepository _studentRepository;
+
+        public StudentController(IStudentRepository studentRepository)
+        {
+            _studentRepository = studentRepository;
+        }
+
+        public IActionResult Index()
+        {
+            var students = _studentRepository.GetAllStudents();
+            return View(students);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var student = _studentRepository.GetStudentById(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+    }
+}
