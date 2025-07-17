@@ -8012,11 +8012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PTPMQL 2425-Ky3\\demo\\demo.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\PhamQuocAn-PTPMQL-2425\\PhamQuocAn-PTPMQL-2425Ky3\\demo\\demo.csproj",
       "projectName": "demo",
-      "projectPath": "D:\\PTPMQL 2425-Ky3\\demo\\demo.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\PhamQuocAn-PTPMQL-2425\\PhamQuocAn-PTPMQL-2425Ky3\\demo\\demo.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\PTPMQL 2425-Ky3\\demo\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\PhamQuocAn-PTPMQL-2425\\PhamQuocAn-PTPMQL-2425Ky3\\demo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"

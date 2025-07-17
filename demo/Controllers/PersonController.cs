@@ -1,35 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
-// using Demo.Models; // Ensure this matches the actual namespace of your Person model
-
-// If your Person model is in a different namespace, update the using directive accordingly, for example:
-// using YourActualNamespace.Models;
-// using Demo.Data; // Ensure this matches the namespace where ApplicationDbContext is defined
-
-// Update the following using directives to match your actual namespaces:
-// using Demo.Models; // Uncomment and update this line if your Person model is in Demo.Models
-// using Demo.Models; // Replace 'Demo.Models' with the correct namespace if different
-// Update the line below to the correct namespace for your Person model, for example:
-// using Demo.Models; // Removed because 'Demo.Models' does not exist. Add the correct namespace for your Person model if needed.
-// using Demo.Data;   // Replace with the actual namespace where 'ApplicationDbContext' is defined
-// Update the line below to the correct namespace where ApplicationDbContext is defined, for example:
-using Demo.Data; // Replace 'YourActualNamespace.Data' with the real namespace
+using demo.Models;
+using demo.Data;
 using Microsoft.EntityFrameworkCore;
-// Add the correct namespace for ApplicationDbContext if it's different
-// For example, if ApplicationDbContext is in Demo.Models:
-// using Demo.Models; // Removed because 'Demo.Models' does not exist. Add the correct namespace for your Person model if needed.
-// using Demo.Data; // Removed because 'Demo.Data' does not exist or is not needed
-// using Demo.Data; // Removed because 'Demo.Data' does not exist or is not needed
+using demo.Models.Process;
+using OfficeOpenXml;
 
-namespace Demo.Controllers
+namespace demo.Controllers
 {
     public class PersonController : Controller
     {
-        // Ensure ApplicationDbContext is defined in your project under the correct namespace
         private readonly ApplicationDbContext _context;
 
-        public PersonController(ApplicationDbContext context)
+        private readonly ExcelProcess _excelProcess;
+
+        public PersonController(ApplicationDbContext context, ExcelProcess excelProcess)
         {
             _context = context;
+            _excelProcess = excelProcess;
         }
 
         public async Task<IActionResult> Index()
@@ -37,24 +24,33 @@ namespace Demo.Controllers
             var model = await _context.Persons.ToListAsync();
             return View(model);
         }
-
+        
         public IActionResult Create()
         {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(person);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            string newId = GenerateNewPersonId();
+            var person = new Person { PersonId = newId };
             return View(person);
         }
+
+        private string GenerateNewPersonId()
+        {
+            var lastPerson = _context.Persons
+                .OrderByDescending(p => p.PersonId)
+                .FirstOrDefault();
+
+            int nextIdNumber = 1;
+            if (lastPerson != null && lastPerson.PersonId?.Length > 0)
+            {
+                // Assuming PersonId is a string like "P001", extract the number part
+                string numberPart = lastPerson.PersonId.Substring(1);
+                if (int.TryParse(numberPart, out int lastNumber))
+                {
+                    nextIdNumber = lastNumber + 1;
+                }
+            }
+            return $"P{nextIdNumber:D3}"; // Format as "P001", "P002", etc.
+        }
+
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -134,9 +130,70 @@ namespace Demo.Controllers
         }
         private bool PersonExists(string id)
         {
-            return (_context.Persons?.Any(e => e.PersonId == id)).GetValueOrDefault();
+            return _context.Persons.Any(e => e.PersonId == id);
+        }
+
+        public IActionResult Download()
+        {
+            var fileName = "YourFileName" + ".xlsx";
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet1");
+                worksheet.Cells["A1"].Value = "PersonId";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                var personList = _context.Persons.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+        }
+
+        public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file != null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose excel file to upload.");
+                }
+                else
+                {
+                    //rename file when upload to server
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+
+                    {
+                        // Save the file to the server
+                        await file.CopyToAsync(stream);
+                        //read data from excel file fill DataTable
+                        var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                        //using for loop to read data form dt
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            var ps = new Person();
+                            ps.PersonId = dt.Rows[i][0].ToString();
+                            ps.FullName = dt.Rows[i][1].ToString();
+                            ps.Address = dt.Rows[i][2].ToString();
+                            //add object to context
+                            _context.Add(ps);
+                        }
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
         }
     }
 }
-
-
