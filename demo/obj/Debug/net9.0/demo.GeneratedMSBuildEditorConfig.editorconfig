@@ -36,6 +36,70 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = aW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xFbXBsb3llZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xFbXBsb3llZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Employee/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xFbXBsb3llZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xFbXBsb3llZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xFbXBsb3llZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xIb21lXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Person/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xQZXJzb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Person/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xQZXJzb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Person/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xQZXJzb25cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Person/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xQZXJzb25cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Person/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xQZXJzb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xTaGFyZWRcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/SendData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = U2VuZERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -87,6 +151,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/MvcDemo/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TXZjRGVtb1xWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-p56ag8bexm
 
 [C:/Users/HP/Desktop/PhamQuocAn-PTPMQL-2425/PhamQuocAn-PTPMQL-2425Ky3/demo/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

@@ -9,7 +9,6 @@ namespace Demo.Models
         [Key]
         public string? PersonId { get; set; }
         public string? FullName { get; set; }
-        [Display(Name = "Địa chỉ")]
         public string? Address { get; set; }
     }
 }

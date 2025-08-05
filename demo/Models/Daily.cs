@@ -5,7 +5,6 @@ public class DaiLy
 {
     public string? MaDaiLy { get; set; }
     public string? TenDaiLy { get; set; }
-    [DataType(DataType.EmailAddress)]
     public string? DiaChi { get; set; }
     public string? MaHTPP { get; set; }
     public string? TenHTPP { get; set; }

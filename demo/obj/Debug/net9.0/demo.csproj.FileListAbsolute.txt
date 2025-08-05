@@ -361,3 +361,13 @@ D:\PTPMQL 2425-Ky3\demo\obj\Debug\net9.0\refint\demo.dll
 D:\PTPMQL 2425-Ky3\demo\obj\Debug\net9.0\demo.pdb
 D:\PTPMQL 2425-Ky3\demo\obj\Debug\net9.0\demo.genruntimeconfig.cache
 D:\PTPMQL 2425-Ky3\demo\obj\Debug\net9.0\ref\demo.dll
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.AssemblyInfo.cs
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.RazorAssemblyInfo.cache
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.RazorAssemblyInfo.cs
+C:\Users\HP\Desktop\PhamQuocAn-PTPMQL-2425\PhamQuocAn-PTPMQL-2425Ky3\demo\obj\Debug\net9.0\demo.sourcelink.json
